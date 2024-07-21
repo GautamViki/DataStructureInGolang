@@ -96,5 +96,5 @@ func (h *Head) DeleteFromIndex(idx int) {
 		slice = append(slice, currentNode.Value)
 		currentNode = currentNode.Next
 	}
-	fmt.Println(slice)
+	fmt.Printf("Delete from indext %d, result = %v", idx, slice)
 }
