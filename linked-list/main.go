@@ -13,4 +13,5 @@ func main() {
 	head.GetAllNode()
 	head.DeleteFirstNode()
 	head.DeleteLastNode()
+	head.DeleteFromIndex(49)
 }

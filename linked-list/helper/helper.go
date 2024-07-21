@@ -60,7 +60,7 @@ func (h *Head) DeleteLastNode() {
 		preNode = nextNode
 		nextNode = nextNode.Next
 	}
-	preNode.Next=nil
+	preNode.Next = nil
 	var slice []int
 	currentNode := h.Head
 	for currentNode != nil {
@@ -68,4 +68,33 @@ func (h *Head) DeleteLastNode() {
 		currentNode = currentNode.Next
 	}
 	fmt.Println("Delete Last Node from List ", slice)
+}
+
+func (h *Head) DeleteFromIndex(idx int) {
+	if idx < 0 {
+		fmt.Println("Invalid Index")
+	} else if idx == 0 {
+		h.Head = h.Head.Next
+	}
+	if idx > 0 {
+		currentNode := h.Head
+		preNode := currentNode
+		count := 0
+		for currentNode != nil {
+			if count == idx {
+				preNode.Next = currentNode.Next
+				break
+			}
+			preNode = currentNode
+			currentNode = currentNode.Next
+			count++
+		}
+	}
+	currentNode := h.Head
+	var slice []int
+	for currentNode != nil {
+		slice = append(slice, currentNode.Value)
+		currentNode = currentNode.Next
+	}
+	fmt.Println(slice)
 }
