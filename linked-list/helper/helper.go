@@ -52,3 +52,20 @@ func (h *Head) DeleteFirstNode() {
 	}
 	fmt.Println("Delete First Node from list ", slice)
 }
+
+func (h *Head) DeleteLastNode() {
+	nextNode := h.Head
+	preNode := nextNode
+	for nextNode.Next != nil {
+		preNode = nextNode
+		nextNode = nextNode.Next
+	}
+	preNode.Next=nil
+	var slice []int
+	currentNode := h.Head
+	for currentNode != nil {
+		slice = append(slice, currentNode.Value)
+		currentNode = currentNode.Next
+	}
+	fmt.Println("Delete Last Node from List ", slice)
+}

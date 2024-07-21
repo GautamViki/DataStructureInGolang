@@ -12,4 +12,5 @@ func main() {
 	head.InsertValueInList()
 	head.GetAllNode()
 	head.DeleteFirstNode()
+	head.DeleteLastNode()
 }
