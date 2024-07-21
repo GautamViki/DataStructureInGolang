@@ -41,6 +41,16 @@ func (h *Head) GetAllNode() []int {
 	return slices
 }
 
+func (h *Head) GetNumberOfNodeInList() {
+	cusrrentNode := h.Head
+	count := 0
+	for cusrrentNode != nil {
+		cusrrentNode = cusrrentNode.Next
+		count++
+	}
+	fmt.Println("Number of Node in List ", count)
+}
+
 func (h *Head) DeleteFirstNode() {
 	currentNode := h.Head
 	h.Head = currentNode.Next
